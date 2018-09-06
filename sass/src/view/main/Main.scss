@@ -1,0 +1,28 @@
+$xpaint-header-background-color: #2a3f5d;
+$xpaint-header-text-color: #fff;
+$xpaint-header-text-shadow-color: null;
+$xpaint-header-use-gradient: false;
+
+#app-header {
+  background-color: $xpaint-header-background-color;
+  @if $xpaint-header-use-gradient {
+    @include background-image(linear-gradient(top, lighten($xpaint-header-background-color, 5), darken($xpaint-header-background-color, 5)));
+  }
+  border-bottom: 1px solid darken($xpaint-header-background-color, 15);
+}
+
+#app-header-title {
+  padding: 15px 0 10px 0;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  @if $xpaint-header-text-shadow-color != null {
+    text-shadow: 0 1px 0 $xpaint-header-text-shadow-color;
+  }
+}
+
+#app-header-logo {
+  width: 40px;
+  height: 40px;
+  background: url(images/logo.png) no-repeat center 4px;
+}
